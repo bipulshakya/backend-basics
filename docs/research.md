@@ -1,4 +1,4 @@
-1.) What is backend?
+1.) **What is backend?**
 Ans. Basically, the backend is the hidden part of a website, app, or computer system. It handles the server-side logic, database, and core functionality of any web applications. It ensures smooth communication between the server and client using languages and frameworks like Node.js, Django, and Spring boot.
     **Core Functionality of Backend includes**
 (Backend exists garnu ko karan aauta specific reasons xa, As we know sabai kura haru chai browser aafaile garna sakdaina so, tyo nasakne kaam haru garna ko lagi chai backend banako ho)
@@ -31,3 +31,35 @@ Ans. Basically, the backend is the hidden part of a website, app, or computer sy
 
    **Give one concrete example of something that must be on the backend and explain why.**
    Ans.User ko Password chai backend ma hunu parxa kina vane tyo forntend ma rakhyo vane hashed gareko password ani cryptographic secrets haru sabai ma expose hunxa jasle garda jole ni browser ko dev tools access garna sakxa, source code herna sakxa, ani user ko credentials steal garna sakxa ani security break garna sakxa without ever knowing the real password.
+
+2.) **What is a backend composed of?**
+Ans. A backend is composed of a server/runtime, an application running server-side logic, Database for data storage, and a API layer that connects everything to the user-facing frontend. It acts as the hidden engine processing rules, user accounts, and data behind the scenes.
+ 
+ i. **Server/runtime**: yo chai aauta environment ho junle code haru executes garxa ani incoming requests haru sunxa
+
+ ii. **Application Code**: yesma chai actual logic implement hunxa such as route handlers, validations, business rules. It decides what to do with an incoming request.
+
+ iii. **API layer**: yele chai aauta bridge ko kaam garxa frontend and backend so that they can talk to each other and exchange data's.
+
+ iv. **Database**: Yo chai aauta structured system ho like(SQL or NoSQl) that saves, update, and retrieves permanent information.
+
+ [ Client Request ]
+       │
+       ▼
+ ┌───────────┐
+ │ API Layer │ ◄── (Validates and routes the request)
+ └─────┬─────┘
+       │
+       ▼
+ ┌───────────────────┐
+ │ Application Code  │ ◄── (Applies business rules and logic)
+ └─────┬───────────┬─┘
+       │           │
+       │ (Runs on) │ (Reads/Writes)
+       ▼           ▼
+ ┌───────────┐   ┌──────────┐
+ │  Server / │   │ Database │ ◄── (Stores data safely)
+ │  Runtime  │   └──────────┘
+ └───────────┘
+
+**The analogy That Helps me**: Server vaneko chai aauta kitchen ma vako khali thau/kitchen's physical space, application code vaneko chai chef, ani API vaneko chai hamro waiter, ani store room chai hamro Database
