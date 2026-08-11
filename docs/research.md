@@ -63,3 +63,17 @@ Ans. A backend is composed of a server/runtime, an application running server-si
  └───────────┘
 
 **The analogy That Helps me**: Server vaneko chai aauta kitchen ma vako khali thau/kitchen's physical space, application code vaneko chai chef, ani API vaneko chai hamro waiter, ani store room chai hamro Database
+
+3.) **what is An API?**
+An API(Application Programming Interface) is a digital messanger that allows two different software applications to talk to each other.
+ ##To Someone non-technical
+  API vaneko chai aauta kunai pani resturant ko waiter, ani hami vaneko chai client, and Kitchen vaneko chai server, aba hami aauta resurant ma gaisake paxi menu herera food ko lagi order dinxau waiter lai ani waiter le tyo food ko order chai kitchen vitra dinxa ani hamro kitchen bata food prepare vayera waiter through aaunxa jun chai hamilai kitchen vitra kasari banyo kehini tha hudaina. waiter ko kaam chai k vayo client le gareko menu through bata request kitchen vitra deliver garne ani hami request gareko food hami client sanga lera aaidine. In simple API vaneko ni yehi ho.
+ ##To a developer
+ An API acts as a communication layer between a client and server, handling requests and returning responses to enable data exchange between applications.
+
+Client --> API (Request): The client application sends a request to the API containing required data, parameters, headers, and authentication details.
+API --> Server (Request Forwarding):The API receives the request, validates the input, applies business logic, and forwards the request to the appropriate server or database.
+Server --> API (Response): The server processes the request, retrieves or updates data, and sends the result back to the API.
+API --> Client (Response): The API formats the response (commonly in JSON or XML format) and sends it back to the client application.
+
+Example: A mobile banking app requests account details through an API. The API verifies the request, fetches data from the banking server, and returns the account information to the app.
