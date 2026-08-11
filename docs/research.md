@@ -12,7 +12,7 @@ Ans. Basically, the backend is the hidden part of a website, app, or computer sy
 
  v. **Integration with external services**: It allows software systems to safely share data and run actions using web tools like APIs, webhooks, and standard data formats. Yesle chai internal apps haru lai payment gateways , CRM tools, Cloud storage and AI agents haru sanga connect garna help garxa.
 
- **The analogy that helps me**: backend vaneko chai aauta restaurant kitchen jastai ho jun ma Customers(frontend) jo le chai kitchen ma gayera aafno lagi khana aafai pakaudaina, Customers le just aafulai khana maan lageko kura chai Counter ma gayera order dinxa (API Calls) ani tyo order deko khana chai kitchen le decide garxa kasari pakaune tyo stock (database) ma rakheko ingredients ani recipes (business logic) use garera jun chai customers le dekhdaina.
+ **The analogy that helped me**: backend vaneko chai aauta restaurant kitchen jastai ho jun ma Customers(frontend) jo le chai kitchen ma gayera aafno lagi khana aafai pakaudaina, Customers le just aafulai khana maan lageko kura chai Counter ma gayera order dinxa (API Calls) ani tyo order deko khana chai kitchen le decide garxa kasari pakaune tyo stock (database) ma rakheko ingredients ani recipes (business logic) use garera jun chai customers le dekhdaina.
   **What runs on the client vs. the server?**
   Ans. The client runs on the user's local devices (like a web browser or phone app), handling what you and touch. The server runs on a remote computer in a data center, handling heavy data, security, and storage. Together they form a request-response cycle.
 
@@ -62,7 +62,7 @@ Ans. A backend is composed of a server/runtime, an application running server-si
  │  Runtime  │   └──────────┘
  └───────────┘
 
-**The analogy That Helps me**: Server vaneko chai aauta kitchen ma vako khali thau/kitchen's physical space, application code vaneko chai chef, ani API vaneko chai hamro waiter, ani store room chai hamro Database
+**The analogy That Helped me**: Server vaneko chai aauta kitchen ma vako khali thau/kitchen's physical space, application code vaneko chai chef, ani API vaneko chai hamro waiter, ani store room chai hamro Database
 
 3.) **what is An API?**
 An API(Application Programming Interface) is a digital messanger that allows two different software applications to talk to each other.
@@ -108,3 +108,29 @@ Basically JSON chai Data exchange garna ko lagi commonly use hune language, jun 
   },
   "mid_name": null
 }
+
+**The analogy that helped me**: XML vaneko chai aauta Wooden Create jastai vayo ani JSON vaneko chai Ziploc Bag.
+
+5.) **HTTP methods and conventions Cover GET, POST, PUT, PATCH, DELETE — what each is for, not just what it does. Then cover status codes: what do the 2xx, 4xx and 5xx families mean, and what specifically are 200, 201, 204, 400, 404 and 500? Also explain what "idempotent" means and which methods are.**
+Ans. ##HTTP Methods:HTTP methods (or verbs) tell a web server what action to perform on a resource. The core methods map to CRUD operations
+
+i. GET(Read) — retrieve data, no side effects. GET /products fetches a list; nothing should change on the server just because you looked.
+
+ii. POST(Create) — create something new, or trigger an action that isn't naturally idempotent. POST /orders creates a new order each time you call it — call it twice, you get two orders.
+
+iii. PUT(Replace) — replace a resource entirely. PUT /users/5 with a full user object overwrites everything at that ID, including fields you didn't mention (they'd get wiped or reset).
+
+iv. PATCH(update) — partially update a resource. PATCH /users/5 with {"email": "eg@gmail.com"} changes just that field, leaving the rest untouched.
+
+v. DELETE — remove a resource. DELETE /orders/12 deletes that order.
+
+   ##Status Codes
+i. 2xx = success. 200 OK — request succeeded, here's your data. 201 Created — a new resource was made (returned after a successful POST). 204 No Content — succeeded, but nothing to return (common after DELETE).
+
+ii. 4xx = client's fault — bad request. 400 Bad Request — malformed input. 404 Not Found — resource doesn't exist.
+
+iii. 5xx = server's fault. 500 Internal Server Error — something broke on the backend, not because of what the client sent.
+
+##Idempotent
+
+An operation is idempotent if calling it once or ten times leaves the system in the same state. GET, PUT, and DELETE are idempotent (deleting an already deleted thing still results in "it's gone"). POST is not it create duplicates.
