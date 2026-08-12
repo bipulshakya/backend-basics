@@ -106,3 +106,42 @@ const user = {
   name: "Bipul",
   age: 22
 };
+
+
+9.)**Languages and frameworks Which languages are commonly used for backends, and what's a well-known framework for each?**
+
+Ans.The most common backend languages and their well-known frameworks include Python (Django), JavaScript (Express), Java (Spring Boot), PHP (Laravel), and C# (ASP.NET Core).
+
+**what is Node.js?**
+
+Ans.It is a JavaScript runtime environment. It's officially defined as “an open-source and cross-platform JavaScript runtime environment.”
+
+Let's see what this means:
+
+Node.js is open source because its code is publicly available and maintained by a large community of developers.
+It's cross-platform because it works on any operating system, including Windows, macOS, and Linux.
+And it's a JavaScript runtime environment because it allows you to run JavaScript code outside of a browser.
+
+Normally Javascript chai browser ma run hunxa 
+Browser --> Javascript --> Web Page
+Tara with Node.js, Javascript server ma ni run hunxa
+Client -→ HTTP Request -→ Node.js Server -→ Database
+                         ↓
+                    HTTP Response
+
+
+**what is Express?**
+
+Ans.It is a minimal and flexible web framework built on top of Node.js. It simplifies the process of building web servers and APIs.
+
+Instead of writing tons of boilerplate code with Node’s native http module, Express lets you create robust web applications with just a few lines.
+
+We can think of it as the fast, unopinionated layer that makes Node.js easier and more powerful.
+
+With Express, you can create:
+
+Web apps
+RESTful APIs
+Single Page Application (SPA) backends
+Middleware-heavy services
+Anything server-side with HTTP

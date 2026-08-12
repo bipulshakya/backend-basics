@@ -2,7 +2,7 @@
 
 Ans. Basically, the backend is the hidden part of a website, app, or computer system. It handles the server-side logic, database, and core functionality of any web applications. It ensures smooth communication between the server and client using languages and frameworks like Node.js, Django, and Spring boot.
 
-    **Core Functionality of Backend includes**
+   **Core Functionality of Backend includes**
 (Backend exists garnu ko karan aauta specific reasons xa, As we know sabai kura haru chai browser aafaile garna sakdaina so, tyo nasakne kaam haru garna ko lagi chai backend banako ho)
 
  i. **Data storage and retrieval**: talking to a database to save, fetch, update, or delete data. Example - Hamile kehi kura haru instagram or facebook ma post garyau, tyo post garne bittikai backend le database ma gayera lekhdinxa so, tyo voli pani browser ko memory ma matra haina sabai ko devices ma hos.
