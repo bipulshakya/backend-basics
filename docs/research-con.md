@@ -145,3 +145,9 @@ RESTful APIs
 Single Page Application (SPA) backends
 Middleware-heavy services
 Anything server-side with HTTP
+
+10.)**JavaScript and TypeScript**
+
+**What is TypeScript and what problem does it solve? Give a concrete bug that TypeScript catches and plain JavaScript doesn't.**
+
+Ans.
