@@ -45,3 +45,64 @@ Situation: A banking system where customers, accounts, and transactions have wel
 
 Situation: A social media application where user profiles or posts may have different fields and the data structure can change frequently.
 
+8.)**What is an ORM?**
+
+Ans. An ORM (Object-Relational Mapping) is a tool that lets you write code in languages like JavaScript to talk to a database. It turns database tables into objects. It solves the impedance mismatch problem, bridging the gap between flat relational tables and nested code objects so you do not write manual SQL.
+
+**What problem does it solve?**
+
+Ans. ORM bina chai hamile SQl query aafai lekhnu parthiyo yesari
+Example: SELECT * FROM users WHERE email = 'bipul@gmail.com';
+
+ORM use garesi such as prisma hamile SQL query lekhnu pardaina simple jun language use garexau tehi language ma code lekhasi ORM le chai telai translate gardinxa SQL ma ani database sanga communicate garna milxa 
+Example:
+const user = await prisma.user.findUnique({
+  where: {
+    email: "bipul@example.com"
+  }
+});
+
+**Show a rough side-by-side: a raw SQL query vs. what the same thing looks like through an ORM.**
+
+Raw SQL: SELECT * FROM users WHERE email = 'bipul@gmail.com';
+Prisma ORM: prisma.user.findUnique({ where: { email: 'bipul@gmail.com' } })
+
+**What's the trade-off — what do you give up by using one?**
+
+Ans. The One thing we give up with using an ORM is some direct control over Database.
+ORM use garnu vaneko Kehi kura pako bafat kehi kura haru gumaunu
+
+Advantages:
+
+Less repetitive SQL
+Easier to work with in JavaScript/TypeScript
+Type safety with tools like Prisma
+Easier CRUD operations
+Helps reduce some common SQL mistakes
+
+Disadvantages:
+
+Complex queries can become harder to express
+Ywe may not know exactly what SQL is being generated
+Some ORM operations can be less efficient than carefully optimized SQL
+we still need to understand databases and SQL for advanced work
+
+**What's the difference between JSON and a JavaScript object?**
+
+Dubai aautai dekhinxa tara aautai chai haina kaam haru xuttai xuttai xan.
+
+##JSON:
+JSON is a text format used for storing and exchanging data. It uses double quotes around property names and strings.It cannot hold functions or dates. It moves data across the web.
+Example:
+{
+  "name": "Bipul",
+  "age": 22
+}
+
+##JavaScript object
+It is an actual data structure that exists inside a running JavaScript program.It can hold functions, dates, and variable values. It runs actions in code.
+Example:
+const user = {
+  name: "Bipul",
+  age: 22
+};
