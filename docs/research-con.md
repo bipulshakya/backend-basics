@@ -23,3 +23,25 @@ The URL GET /users/5 follows REST rules by using nouns to name a resource and pa
 GET /getUser?id=5 uses a verb based Remote Procedure Call (RPC) style with query parameters, making it less standard, harder to scale, and less clear.
 
 
+7.)**What is a database?**
+
+Ans.A database is a digital repository for storing, managing and securing organized collections of data. 
+Different types of databases store data in different ways. For example, relational databases store it in defined tables with rows and columns, while nonrelational databases can store it as a variety of data structures, including key-value pairs or graphs.
+
+**Why don't we just store data in a file or in a variable?**
+
+Ans.We do store data in variables and files for short-term use, but they fail for permanent storage, large scale, sharing between users, and safe updates. Variables disappear when code stops. Files get messy, slow to search, and break if two people change them at the exact same time.
+
+**What's the difference between a relational (SQL) database and a non-relational (NoSQL) one?**
+
+Ans.Relational (SQL) databases use rigid tables with rows and columns, while non-relational (NoSQL) databases use flexible formats like key-value pairs, documents, or graphs.
+
+
+##SQL: 
+
+Situation: A banking system where customers, accounts, and transactions have well-defined relationships and data consistency is critical.
+
+##NoSQL:
+
+Situation: A social media application where user profiles or posts may have different fields and the data structure can change frequently.
+
