@@ -247,3 +247,61 @@ nor this:
 
 const greeting = "say Hi";
 const greeting = "say Hello instead";// error: Identifier 'greeting' has already been declared
+
+**What is asynchronous code and why does a backend need it? Cover callbacks → promises → async/await. Write a tiny example of each doing the same thing.**
+
+Ans.Asynchronous code lets a program run a task in the background without blocking the main thread.
+A backend needs it to handle many slow operations like database queries or file reads at the same time without freezing and making other users wait.
+
+Callbacks are functions passed as arguments to other functions and are executed once a specific task is completed. They are commonly used in JavaScript for handling asynchronous operations but can lead to "callback hell" when nested multiple times.
+
+function loadData(cb) {
+  setTimeout(() => cb("Data loaded"), 1000);
+}
+loadData((res) => console.log(res));
+
+
+Promises offer a more structured approach to handle asynchronous operations, addressing the callback hell problem. They represent the eventual completion (or failure) of an asynchronous task.
+
+function loadData() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("Data loaded"), 1000);
+  });
+}
+loadData().then((res) => console.log(res));
+
+
+Async/Await is built on top of Promises and allows asynchronous code to be written in a synchronous style, making it easier to read and understand.
+
+function loadData() {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve("Data loaded"), 1000);
+  });
+}
+async function run() {
+  const res = await loadData();
+  console.log(res);
+}
+run();
+
+
+**Explain type and interface in TypeScript, and what a type annotation on a function looks like.**
+
+Ans. Type Annotations in TypeScript are a way to explicitly declare the type of a variable, parameter, or function return value
+
+This approach ensures that functions accept only the expected types of arguments and return values, thereby reducing the likelihood of type-related errors.
+Enables better autocomplete, refactoring, and navigation in IDEs.
+
+function add(a: number, b: number): number {
+    return a + b;
+}
+
+let multiply = (a: number, b: number): number => a * b;
+
+console.log(add(5, 3));      // 8
+console.log(multiply(4, 2)); // 8
+
+Type inference is the ability of the compiler to automatically determine the type of a variable based on its value, without explicit annotations.
+
+Type inference is the process by which the type of a variable is automatically deduced by the TypeScript compiler, based on the value it is assigned.
+This means you don’t always need to explicitly annotate types, as TypeScript can often figure out the type on its own.
