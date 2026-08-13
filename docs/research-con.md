@@ -150,4 +150,100 @@ Anything server-side with HTTP
 
 **What is TypeScript and what problem does it solve? Give a concrete bug that TypeScript catches and plain JavaScript doesn't.**
 
-Ans.
+Ans.TypeScript is a superset of the JavaScript language that has a single open-source compiler and is developed mainly by a single vendor: Microsoft. The goal of TypeScript is to help catch mistakes early through a type system and to make JavaScript development more efficient.
+
+JavaScript is the language of the web. It runs in every browser, powers every frontend, and increasingly runs on servers too. But JavaScript has a well-known problem: it has no type system. You can pass a string where a number belongs, call a method on undefined, or misspell a property name — and nothing stops you until the code runs and something breaks.
+
+TypeScript exists to fix that. It’s a superset of JavaScript that adds static types, letting you catch errors before runtime instead of after. It’s one of the most widely adopted languages in modern software development, and understanding why developers reach for it — and when — matters if you’re building anything serious.
+
+##The Bug Example:
+Imagine We have a function that prints a user's age in capital letters:
+
+function printUpperAge(user) {
+  console.log(user.age.toUpperCase());
+}
+printUpperAge({ age: 30 });
+
+Kina yesma Js fail hunxa ta 
+ysema number 30 sanga chai .toUpperCase() tool xaina tyo tool navaye pani javascript le tyo program run garxa run vayesi tyo program crash hunxa with runtime error as TypeError: user.age.toUpperCase is not a function.
+
+Yesama typescript le kasari fix garxa ta 
+typescript le tyo age lai as a number label gareko herxa age: number tyo number le chai .toUpperCase() use garna mildaina vanxa ani instantly error show garxa hamro code editor ma hamile tyo code run garnu vanda aagadi nai.
+
+
+**What does "compiled to JavaScript" mean — what does the browser or Node actually run?**
+
+Ans."Compiled to JavaScript" means another programming language turns into JavaScript text before it runs.. The browser or Node.js never sees the original language. They only read, parse, and execute standard JavaScript files.
+
+Browser or node le acutally ma Standard file plain .js run garxa jun ma chai functions, variables, and objects haru hunxa. Tespaxi engine's parser javascript text lai aauta fast internal machine code ma convert garxa junlai hamile bytecode pani vanxau. Ani tespaxi JIT(just-in-Time) compiler le chai byte code lai real machine instructions ma convert garxa jun chai hamro computer ko cpu le read garna sakxa.
+
+**Explain in your own words: var / let / const, and why we basically stopped using var.**
+
+In JavaScript, var, let, and const are keywords used to declare variables.
+
+##Var:Is's declarations are globally scoped or function/locally scoped.The scope is global when a var variable is declared outside a function. This means that any variable that is declared with var outside a function block is available for use in the whole window.Is is function scoped when it is declared within a function. This means that it is available and can be accessed only within that function.
+
+To understand further, look at the example below.
+
+    var greeter = "hey hi";
+
+    function newFunction() {
+        var hello = "hello";
+    }
+Here, greeter is globally scoped because it exists outside a function while hello is function scoped. So we cannot access the variable hello outside of a function. So if we do this:
+
+var greeter = "hey hi";
+
+    function newFunction() {
+        var hello = "hello";
+    }
+    console.log(hello); // error: hello is not defined
+We'll get an error which is as a result of hello not being available outside the function.
+
+var variables can be re-declared and updated
+This means that we can do this within the same scope and won't get an error.
+
+    var greeter = "hey hi";
+    var greeter = "say Hello instead";
+
+##Let: It is now preferred for variable declaration. It's no surprise as it comes as an improvement to var declarations. It also solves the problem with var that we just covered. Let's consider why this is so.
+
+let is block scoped
+A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block.
+
+So a variable declared in a block with let is only available for use within that block. Let me explain this with an example:
+
+let greeting = "say Hi";
+   let times = 4;
+
+   if (times > 3) {
+        let hello = "say Hello instead";
+        console.log(hello);// "say Hello instead"
+    }
+   console.log(hello) // hello is not defined
+
+let can be updated but not re-declared.
+Just like var, a variable declared with let can be updated within its scope. Unlike var, a let variable cannot be re-declared within its scope. So while this will work:
+
+let greeting = "say Hi";
+    greeting = "say Hello instead";
+this will return an error:
+
+    let greeting = "say Hi";
+    let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
+
+##Const: Variables declared with the const maintain constant values. const declarations share some similarities with let declarations.
+
+const declarations are block scoped
+Like let declarations, const declarations can only be accessed within the block they were declared.
+
+const cannot be updated or re-declared
+This means that the value of a variable declared with const remains the same within its scope. It cannot be updated or re-declared. So if we declare a variable with const, we can neither do this:
+
+const greeting = "say Hi";
+    greeting = "say Hello instead";// error: Assignment to constant variable.
+
+nor this:
+
+const greeting = "say Hi";
+const greeting = "say Hello instead";// error: Identifier 'greeting' has already been declared
