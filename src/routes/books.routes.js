@@ -63,6 +63,22 @@ router.put("/", (req, res) => {
     res.status(200).json(book);
 });
 
+// DELETE /books/:id
+// Delete a book
+router.delete("/:id", (req, res) => {
+  const id = Number(req.params.id);
 
+  const bookIndex = books.findIndex((book) => book.id === id);
+
+  if (bookIndex === -1) {
+    return res.status(404).json({
+      error: "Book not found"
+    });
+  }
+
+  const deletedBook = books.splice(bookIndex, 1)[0];
+
+  res.status(200).json(deletedBook);
+});
 
 module.exports = router;
