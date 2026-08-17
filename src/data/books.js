@@ -10,7 +10,7 @@ const books = [
         id: 2,
         title: "Pride and Prejudice",
         author: "Jane Austen",
-        Year: 1813,
+        year: 1813,
         available: true
     },
     {
