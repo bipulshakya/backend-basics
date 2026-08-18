@@ -32,14 +32,24 @@ router.post("/", (req, res) => {
       error: "Title and Author is missing",
     });
   }
+
+  const book = {
+    id: books.length + 1,
+    title,
+    author,
+    year: year || null,
+    available: typeof available === "boolean" ? available : true,
+  };
+
   books.push(book);
   res.status(201).json(books);
 });
 
 //PUT /books/:id
 //Update book
-router.put("/", (req, res) => {
+router.put("/:id", (req, res) => {
   const id = Number(req.params.id);
+
   const book = books.find((book) => book.id === id);
 
   if (!book) {
@@ -47,6 +57,7 @@ router.put("/", (req, res) => {
       error: "Book not found",
     });
   }
+
   const { title, author, year, available } = req.body;
 
   if (!title || !author) {
@@ -55,12 +66,12 @@ router.put("/", (req, res) => {
     });
   }
 
-    // Book update
-    book.title = title
-    book.author = author
-    book.year = year || null;
+  book.title = title;
+  book.author = author;
+  book.year = year || null;
+  book.available = typeof available === "boolean" ? available : book.available;
 
-    res.status(200).json(book);
+  res.status(200).json(book);
 });
 
 // DELETE /books/:id
@@ -72,7 +83,7 @@ router.delete("/:id", (req, res) => {
 
   if (bookIndex === -1) {
     return res.status(404).json({
-      error: "Book not found"
+      error: "Book not found",
     });
   }
 

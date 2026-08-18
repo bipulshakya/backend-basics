@@ -21,7 +21,7 @@ app.use("/books", booksRouter);
 
 app.use((req, res) => {
   res.status(404).json({
-    error: "Doesn't Exist"
+    status: "Server is Generated"
   });
 });
 
